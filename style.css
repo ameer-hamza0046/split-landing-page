@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.container {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: flex 1s ease-in-out;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.expand {
+  flex: 3;
+}
+
+.box:nth-child(1) {
+  background-color: pink;
+  background-image: url(./papaya.jpg);
+}
+
+.box > h1, a {
+    z-index: 1;
+}
+
+.box:nth-child(1)::before {
+    content: '';
+    background-color: rgba(48, 48, 0, 0.8);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.box:nth-child(2)::before {
+    content: '';
+    background-color: rgba(0, 110, 255, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.box:nth-child(2) {
+  background-color: yellowgreen;
+  background-image: url(./litchi.jpg);
+}
+
+.box > h1 {
+  font-size: 3rem;
+}
+
+.box > a {
+  text-decoration: none;
+  padding: 10px 40px;
+  border: 2px solid white;
+  color: white;
+  margin-top: 10px;
+}
+
+.box:nth-child(1) > a:hover {
+    border-color: transparent;
+    background-color: rgb(255, 223, 64);
+    color: black;
+}
+
+.box:nth-child(2) > a:hover {
+  background-color: #f17f38;
+  color: black;
+  /* border: 0; */
+  border-color: transparent;
+}
+
+
+@media screen and (max-width:600px) {
+    .box > h1 {
+        font-size: 1.5rem;
+    }
+    .box > a {
+        font-size: small;
+        padding: 5px 15px;
+    }
+}
